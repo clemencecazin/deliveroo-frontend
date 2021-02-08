@@ -1,1 +1,9 @@
 /* Other rules */
+
+header div img {
+    width: 200px;
+}
+
+.categories div img {
+    width: 200px;
+}
