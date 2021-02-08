@@ -2,6 +2,9 @@ import "./App.css";
 import axios from "axios";
 import Header from "./components/Header";
 import Category from "./components/Category";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+library.add(faStar);
 
 import { useState, useEffect } from "react";
 
@@ -35,7 +38,12 @@ function App() {
             />
             {data.categories.map((elem, index) => {
                 return (
-                    <Category key={index} meals={elem.meals} name={elem.name} />
+                    <Category
+                        key={index}
+                        meals={elem.meals}
+                        name={elem.name}
+                        icon={star}
+                    />
                 );
             })}
         </div>
