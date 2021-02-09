@@ -180,6 +180,14 @@ header div:nth-child(2) img {
     color: var(--text-color);
 }
 
+.picture {
+    height: 130px;
+    width: 130px;
+    border-radius: 5px;
+    padding-right: 10px;
+    position: relative;
+}
+
 /* CART */
 
 .cart {

@@ -9,7 +9,7 @@ const Category = ({ name, meals, icon }) => {
                 <div className="allCard">
                     {meals.map((details, index) => {
                         return (
-                            <div className="card" key="id">
+                            <div className="card" key={index}>
                                 <div className="card-desc">
                                     <h3>{details.title}</h3>
                                     <p>{details.description}</p>
@@ -29,14 +29,14 @@ const Category = ({ name, meals, icon }) => {
                                     </div>
                                 </div>
 
-                                <span>
+                                <div className="picture">
                                     {details.picture && (
                                         <img
                                             src={details.picture}
                                             alt="details.title"
                                         />
                                     )}
-                                </span>
+                                </div>
                             </div>
                         );
                     })}
