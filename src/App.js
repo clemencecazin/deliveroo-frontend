@@ -13,7 +13,7 @@ library.add(faStar);
 function App() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [order, setOrder] = useState({});
+    const [order, setOrder] = useState("");
     const [valid, setValid] = useState(false);
 
     useEffect(() => {
