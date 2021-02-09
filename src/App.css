@@ -1,9 +1,201 @@
 /* Other rules */
-
-header div img {
-    width: 200px;
+:root {
+    --title-color: #2e3333;
+    --text-color: #868a8a;
+    --bg-header: #fff;
+    --bg: #f2f5f5;
 }
 
-.categories div img {
-    width: 200px;
+body {
+    margin: 0;
+    font-family: sans-serif;
+    font-weight: 200;
+    box-sizing: border-box;
+    background-color: var(--bg);
+}
+
+h1 {
+    color: var(--title-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+h2 {
+    color: var(--title-color);
+    font-size: 1.5rem;
+    margin: 50px 0 20px 0;
+}
+
+h3 {
+    color: var(--title-color);
+    font-weight: 400;
+    margin: 0 0 0.5rem;
+}
+
+p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    width: 100vw;
+    background-color: var(--bg-header);
+}
+.header-logo {
+    border-bottom: #e9ebeb solid 1px;
+    font-size: 2rem;
+}
+
+header div > div {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header div:first-child {
+    height: 60px;
+}
+
+header div:first-child img {
+    height: 92%;
+}
+
+header div:nth-child(2) {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+header div:nth-child(2) p {
+    font-size: 1.2rem;
+    margin-right: 20px;
+}
+
+header div:nth-child(2) img {
+    width: 350px;
+    border-radius: 5px;
+}
+
+/* CATEGORY */
+
+.category {
+    background-color: var(--bg-categories);
+}
+
+.category .wrapper img {
+    height: 200px;
+}
+
+.category .wrapper {
+    margin: 0 auto;
+    width: 96vw;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.category .wrapper .list-meals {
+    flex: 1 1;
+}
+
+.category .wrapper .list-meals .allCard-meals {
+    flex: 1 1;
+    margin-right: 30px;
+    margin-bottom: -25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.category .wrapper .list-meals .allCard-meals .allCard {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.category .wrapper .list-meals .allCard-meals .allCard .card {
+    width: calc(50% - 10px);
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    align-items: flex-start;
+}
+
+.category .wrapper .list-meals .allCard-meals .allCard .card:hover {
+    box-shadow: 0 20px 20px rgb(50 50 50 / 10%);
+}
+
+.category .wrapper .list-meals .allCard-meals .allCard .card img {
+    width: 130px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.category .wrapper .list-meals .allCard-meals .allCard .card .card-desc {
+    display: flex;
+    flex-direction: column;
+}
+
+.category .wrapper .list-meals .allCard-meals .allCard .card .card-desc p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    line-height: 1.3rem;
+    height: 2.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 0 1rem;
+}
+
+.category
+    .wrapper
+    .list-meals
+    .allCard-meals
+    .allCard
+    .card
+    .card-desc
+    .popular {
+    color: #ff8000;
+    font-size: 0.8rem;
+    margin-left: 1rem;
+    font-weight: 800;
+}
+
+.icone {
+    margin-right: 5px;
+    font-size: 15px;
+}
+
+.price {
+    color: var(--text-color);
+}
+
+/* CART */
+
+.cart {
+    width: 350px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+.inside-cart {
+    box-shadow: 0 22px 24px 0 rgb(46 51 51 / 7%);
+    background: #fff;
+    border-radius: 4px;
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    margin: 30px 0;
 }

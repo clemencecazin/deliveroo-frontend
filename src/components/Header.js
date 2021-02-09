@@ -1,10 +1,21 @@
-const Header = ({ name, description, picture }) => {
+const Header = ({ name, description, picture, logo }) => {
     return (
         <header>
-            <h2>{name}</h2>
-            <p>{description}</p>
+            <div className="header-logo">
+                <div>
+                    <img src={logo} alt="" />
+                </div>
+            </div>
+
             <div>
-                <img src={picture} alt="" />
+                <div>
+                    <h1>{name}</h1>
+                    <p>{description}</p>
+                </div>
+
+                <span>
+                    <img src={picture} alt="" />
+                </span>
             </div>
         </header>
     );

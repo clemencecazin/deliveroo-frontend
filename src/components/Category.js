@@ -1,20 +1,48 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 const Category = ({ name, meals, icon }) => {
     return (
-        <div className="categories">
-            {name}
-            {meals.map((details, index) => {
-                return (
-                    <div key="id">
-                        {details.title} <p>{details.description}</p>
-                        <span>{details.prix}</span>
-                        <img src={details.picture} alt="" />
-                        {details.popular === true && (
-                            <span>{icon}Populaire</span>
-                        )}
-                    </div>
-                );
-            })}
-        </div>
+        meals.length > 0 && (
+            <div className="allCard-meals">
+                <h2>{name}</h2>
+
+                <div className="allCard">
+                    {meals.map((details, index) => {
+                        return (
+                            <div className="card" key="id">
+                                <div className="card-desc">
+                                    <h3>{details.title}</h3>
+                                    <p>{details.description}</p>
+                                    <div>
+                                        <span className="price">
+                                            {details.price} €
+                                        </span>
+                                        {details.popular === true && (
+                                            <span className="popular">
+                                                <FontAwesomeIcon
+                                                    className="icone"
+                                                    icon={icon}
+                                                />
+                                                Populaire
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
+
+                                <span>
+                                    {details.picture && (
+                                        <img
+                                            src={details.picture}
+                                            alt="details.title"
+                                        />
+                                    )}
+                                </span>
+                            </div>
+                        );
+                    })}
+                </div>
+            </div>
+        )
     );
 };
 
