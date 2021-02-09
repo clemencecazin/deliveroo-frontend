@@ -13,6 +13,8 @@ library.add(faStar);
 function App() {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [order, setOrder] = useState({});
+    const [valid, setValid] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -22,6 +24,7 @@ function App() {
                 );
                 console.log(response.data);
                 setData(response.data);
+                setOrder(response.data);
                 setIsLoading(false);
             } catch (error) {
                 console.log(error.message);
@@ -52,13 +55,17 @@ function App() {
                                     meals={elem.meals}
                                     name={elem.name}
                                     icon="star"
+                                    order={order}
+                                    setOrder={setOrder}
+                                    valid={valid}
+                                    setValid={setValid}
                                 />
                             );
                         })}
                     </div>
 
                     <div className="cart">
-                        <Cart />
+                        <Cart order={order} />
                     </div>
                 </div>
             </div>
